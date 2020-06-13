@@ -30,5 +30,4 @@ async def ban(ctx, self, anything: discord.Member, *, reason=None):
 
 
 # RUN
-client = MyClient()
 client.run(os.environ['DISCORD_TOKEN'])
