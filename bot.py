@@ -44,7 +44,7 @@ async def _8ball(ctx, *, question):
 	"Перспектива не очень хорошая.",
 	"Очень сомнительно."     
         ]
-	await ctx.send(f'Вопрос: [question]\nОтвет: [random.choice(responses)])
+	await ctx.send(f'Вопрос: [question]\nОтвет: [random.choice(responses)]')
 	
 	
 # RUN
