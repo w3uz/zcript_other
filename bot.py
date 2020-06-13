@@ -1,7 +1,7 @@
 import discord
 import os
 from discord import utils
-from discord import commands
+from discord.ext import commands
 
 class MyClient(discord.Client):
 	async def on_ready(self):
