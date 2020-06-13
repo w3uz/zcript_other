@@ -48,8 +48,17 @@ async def _8ball(ctx, *, question):
 	await ctx.send(f'Вопрос: {question}\nОтвет: {random.choice(responses)}')
 	
 @client.command()
-async def clear(ctx, amount=5):
-	await ctx.channel.purge(limit-amount)
+@commands.has_permissions(kick_members=True)
+async def ban(ctx, member:discord.User=None, reason =None):
+    if member == None or member == ctx.message.author:
+        await ctx.channel.send("Ты не можешь забанить сам себя")
+        return
+    if reason == None:
+        reason = "Потому что клуон!"
+    message = f"Ты был забанен в {ctx.guild.name} по причине {reason}"
+    await member.send(message)
+    # await ctx.guild.ban(member, reason=reason)
+    await ctx.channel.send(f"{member} забанен!")
 
 	
 # RUN
