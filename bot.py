@@ -26,7 +26,7 @@ async def mute(ctx, self, member: discord.Member, *, reason=None):
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, self, anything: discord.Member, *, reason=None):
     await member.ban(reason=reason)
-    await ctx.send(f'User {member} has been banned.')
+    await ctx.send(f'User {anything} has been banned.')
 
 
 # RUN
