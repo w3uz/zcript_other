@@ -47,18 +47,27 @@ async def _8ball(ctx, *, question):
         ]
 	await ctx.send(f'Вопрос: {question}\nОтвет: {random.choice(responses)}')
 	
+#The below code bans player.
 @client.command()
-@commands.has_permissions(kick_members=True)
-async def ban(ctx, member:discord.User=None, reason =None):
-    if member == None or member == ctx.message.author:
-        await ctx.channel.send("Ты не можешь забанить сам себя")
-        return
-    if reason == None:
-        reason = "Потому что клуон!"
-    message = f"Ты был забанен в {ctx.guild.name} по причине {reason}"
-    await member.send(message)
-    # await ctx.guild.ban(member, reason=reason)
-    await ctx.channel.send(f"{member} забанен!")
+@commands.has_permissions(ban_members = True)
+async def ban(ctx, member : discord.Member, *, reason = None):
+    await member.ban(reason = reason)
+
+#The below code unbans player.
+@client.command()
+@commands.has_permissions(administrator = True)
+async def unban(ctx, *, member):
+    banned_users = await ctx.guild.bans()
+    member_name, member_discriminator = member.split("#")
+
+    for ban_entry in banned_users:
+        user = ban_entry.user
+
+        if (user.name, user.discriminator) == (member_name, member_discriminator):
+            await ctx.guild.unban(user)
+            await ctx.send(f'Unbanned {user.mention}')
+            return
+
 
 	
 # RUN
