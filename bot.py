@@ -18,7 +18,7 @@ async def kick(ctx, member: discord.Member, *, reason=None):
 	
 @client.command()
 async def кто я(ctx):
-	await ctx.send(f'Ты дебил, вот кто ты}
+	await ctx.send(f'Ты дебил, вот кто ты'}
 
 
 # RUN
