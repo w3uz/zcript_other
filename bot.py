@@ -68,7 +68,9 @@ async def unban(ctx, *, member):
             await ctx.send(f'Unbanned {user.mention}')
             return
 
-
+@client.command()
+async def clear(ctx, amount = 5):
+    await ctx.channel.purge(limit = amount + 1)
 	
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
