@@ -17,7 +17,7 @@ async def kick(ctx, member: discord.Member, *, reason=None):
     await ctx.send(f'User {member} has been kicked.')
 	
 @client.command()
-async def кто я(ctx):
+async def кто\я(ctx):
 	await ctx.send(f'Ты дебил, вот кто ты'}
 
 
