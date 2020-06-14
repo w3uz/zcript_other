@@ -102,10 +102,10 @@ async def _info(ctx):
 	await author.send(embed=embed)
 	
 @client.command()
-    async def dollar(ctx):
-    	r = requests.get("https://www.cbr-xml-daily.ru/daily_json.js")
-    	course = r.json()
-    	course = course['Valute']['USD']['Value'] 
+async def dollar(ctx):
+	r = requests.get("https://www.cbr-xml-daily.ru/daily_json.js")
+	course = r.json()
+	course = course['Valute']['USD']['Value'] 
 await ctx.send("Курс доллара: {} рублей".format(course))
 
 	# RUN
