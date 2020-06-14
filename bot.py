@@ -22,7 +22,7 @@ async def ping(ctx):
 	await ctx.send(f'Pong! {round(client.latency * 1000)} ms')
 	
 @client.command(aliases=['8ball', 'test'])
-async def _8ball(ctx, *, question):
+async def _8ball(ctx, *):
 	responses = [
 	'Это точно.',
 	'Это решительно так.',
