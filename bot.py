@@ -1,6 +1,7 @@
 import discord
 import random
 import os
+import requests
 from discord import utils
 from discord.ext import commands
 
