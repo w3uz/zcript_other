@@ -101,7 +101,7 @@ async def _info(ctx):
 	embed.set_footer(text="made by weuz_")
 	await author.send(embed=embed)
 	
-@bot.command()
+@client.command()
 async def dollar(ctx): 
 	r = requests.get("https://www.cbr-xml-daily.ru/daily_json.js") 
 	course = r.json() 
