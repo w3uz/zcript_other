@@ -86,7 +86,7 @@ async def help(ctx):
 		colour = discord.colour.blue()
 	)
 	embed=discord.Embed(title="Краткая информация", url="https://vk.com/lifestyle_nw", description="Бот, сделанный вместе с NinW1n")
-	embed.set_author(name="zcript info", url="https://vk.com/weu_z",, icon_url="https://sun9-51.userapi.com/c856032/v856032447/221860/cyThQyAZFdU.jpg")
+	embed.set_author(name="zcript info", url="https://vk.com/weu_z", icon_url="https://sun9-51.userapi.com/c856032/v856032447/221860/cyThQyAZFdU.jpg")
 	embed.set_thumbnail(url="https://media.discordapp.net/attachments/721319431317356609/721770633456910347/image_5.png")
 	embed.add_field(name="*clear (число)", value="очищает выбранное кол-во сообщений ( нужны права администратора )", inline=True)
 	embed.add_field(name="*ban (упомянание)", value="блокирует пользователя ( нужны права на блокировку пользователей )", inline=True)
@@ -98,7 +98,7 @@ async def help(ctx):
 	embed.add_field(name="*to_over (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в обычный мир ( Minecraft )", inline=True)
 	embed.set_footer(text="made by weuz_")
 	
-await self.bot.say(embed=embed)
+	embed.client.send_message(embed = embed)
 	
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
