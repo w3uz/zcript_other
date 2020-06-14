@@ -79,15 +79,5 @@ async def _roll(ctx, number:int):
 	num = random.randint(0,random.randint(0,number))
 	await ctx.send(f'Вам выпало: {num}')
 	
-@client.command()
-	async def help(ctx):
-		emb = discord.Embed( title = "Команды" )
-		emd.add_field( name = '{}clear'.format ( PREFIX ), value='Очистка чата (нужны права администратора)')
-	        emd.add_field( name = '{}ban'.format ( PREFIX ), value='Банит человека (Нужны права "Банить пользователей")')
-	        emd.add_field( name = '{}kick'.format ( PREFIX ), value='Кикает человека (Нужны права "Кикать пользователей")')
-	        emd.add_field( name = '{}8ball (вопрос)'.format ( PREFIX ), value='Помогает вам с выбором')
-		emd.add_field( name = '{}roll (число)'.format ( PREFIX ), value='выбирает число от 0 до выбранного вами')
-		emd.add_field( name = '{}ping'.format ( PREFIX ), value='Показывает Ping у бота')
-	await ctx.send( embed = emb )
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
