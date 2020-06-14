@@ -10,7 +10,6 @@ class MyClient(discord.Client):
         
 client = commands.Bot(command_prefix= '*')
 Clientdiscord = discord.Client()
-client.remove_command('help')
 
 @client.command()
 @commands.has_permissions(kick_members=True)
