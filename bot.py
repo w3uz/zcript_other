@@ -83,7 +83,7 @@ async def _roll(ctx, number:int):
 @client.command(aliases=['info'])
 async def _info(ctx):
 	embed = discord.Embed (
-		colour = discord.Colour.red
+		colour = discord.Colour.red(0xff0000)
 	)
 	embed=discord.Embed(title="Краткая информация", url="https://vk.com/lifestyle_nw", description="Бот, сделанный вместе с NinW1n")
 	embed.set_author(name="zcript info", url="https://vk.com/weu_z", icon_url="https://sun9-51.userapi.com/c856032/v856032447/221860/cyThQyAZFdU.jpg")
