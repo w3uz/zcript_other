@@ -22,7 +22,7 @@ async def ping(ctx):
 	await ctx.send(f'Pong! {round(client.latency * 1000)} ms')
 	
 @client.command(aliases=['8ball', 'test'])
-async def _8ball(ctx, *):
+async def _8ball(ctx, *, question):
 	responses = [
 	'Это точно.',
 	'Это решительно так.',
@@ -74,7 +74,7 @@ async def clear(ctx, amount = 5):
     await ctx.channel.purge(limit = amount + 1)
 
 @client.command(aliases=['roll'])
-async def _roll(ctx):
+async def _roll(ctx, *):
 	rollvar = [
 	'1',
 	'2',
