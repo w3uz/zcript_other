@@ -77,7 +77,7 @@ async def clear(ctx, amount=None):
 @client.command(aliases=['roll'])
 async def _roll(ctx, number:int):
 	num = random.randint(0,random.randint(0,number))
-	await ctx.send(f'Вам выпало: {number}')
+	await ctx.send(f'Вам выпало: {num}')
 	
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
