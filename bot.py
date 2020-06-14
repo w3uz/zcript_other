@@ -82,6 +82,8 @@ async def _roll(ctx, number:int):
 	
 @client.command(pass_context=True, aliases=['info'])
 async def _info(ctx):
+	author = ctx.message.author
+	
 	embed = discord.Embed (
 		colour = discord.Colour.red()
 	)
@@ -97,7 +99,7 @@ async def _info(ctx):
 	embed.add_field(name="*to_nether (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в адские ( Minecraft )", inline=True)
 	embed.add_field(name="*to_over (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в обычный мир ( Minecraft )", inline=True)
 	embed.set_footer(text="made by weuz_")
-	await client.send(embed=embed)
+	await author.send(embed=embed)
 	
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
