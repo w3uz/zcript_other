@@ -80,7 +80,7 @@ async def _roll(ctx, number:int):
 	num = random.randint(0,random.randint(0,number))
 	await ctx.send(f'Вам выпало: {num}')
 	
-@client.command(pass_context =True)
+@client.command(pass_context=True)
 async def _info(ctx):
 	embed = discord.Embed (
 		colour = discord.Colour.red()
