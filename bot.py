@@ -75,20 +75,8 @@ async def clear(ctx, amount=None):
     await ctx.channel.send(':: Сообщения успешно удалены')
 
 @client.command(aliases=['roll'])
-async def _roll(ctx):
-	rollvar = [
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-	'6',
-	'7',
-	'8',
-	'9',
-	'10'
-        ]
-	await ctx.send(f'Выпало число {random.choice(rollvar)}')
+async def _roll(ctx, number):
+	await ctx.send(f'Выпало число {random.randint(0,random.randint(1,{number})}')
 	
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
