@@ -81,7 +81,7 @@ async def _roll(ctx, number:int):
 	await ctx.send(f'Вам выпало: {num}')
 	
 @client.command
-async def help(ctx):
+async def info(ctx):
 	embed = discord.Embed (
 		colour = discord.colour.blue()
 	)
