@@ -99,6 +99,13 @@ async def _info(ctx):
 	embed.add_field(name="*to_over (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в обычный мир ( Minecraft )", inline=True)
 	embed.set_footer(text="made by weuz_")
 	await author.send(embed=embed)
+	
+@bot.command()
+  async def dollar(ctx):
+    r = requests.get("https://www.cbr-xml-daily.ru/daily_json.js")
+    course = r.json()
+    course = course['Valute']['USD']['Value'] 
+await ctx.send("Курс доллара: {} рублей".format(course))
 
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
