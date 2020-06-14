@@ -98,7 +98,7 @@ async def _info(ctx):
 	embed.add_field(name="*to_over (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в обычный мир ( Minecraft )", inline=True)
 	embed.set_footer(text="made by weuz_")
 	
-	embed.client.send_message(embed = embed)
+	await author.send(embed=embed)
 	
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
