@@ -70,8 +70,9 @@ async def unban(ctx, *, member):
 
 @client.command()
 @commands.has_permissions(administrator = True)
-async def clear(ctx, amount = 5):
-    await ctx.channel.purge(limit = amount + 1)
+async def clear(ctx, amount=None):
+    await ctx.channel.purge(limit=int(amount))
+    await ctx.channel.send(':: Сообщения успешно удалены')
 
 @client.command(aliases=['roll'])
 async def _roll(ctx):
