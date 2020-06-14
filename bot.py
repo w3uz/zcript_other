@@ -76,16 +76,16 @@ async def clear(ctx, amount = 5):
 @client.command(aliases=['roll'])
 async def _roll(ctx, *, question):
 	rollvar = [
-	'1'.
+	'1',
 	'2',
-	'3'.
+	'3',
 	'4',
-	'5'.
+	'5',
 	'6',
-	'7'.
+	'7',
 	'8',
-	'9'.
-	'10',
+	'9',
+	'10'
         ]
 	await ctx.send(f'Выпало число {random.choice(rollvar)}')
 	
