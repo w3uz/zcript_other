@@ -72,6 +72,22 @@ async def unban(ctx, *, member):
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount = 5):
     await ctx.channel.purge(limit = amount + 1)
+
+@client.command(aliases=['roll'])
+async def _roll(ctx, *, question):
+	rollvar = [
+	'1'.
+	'2',
+	'3'.
+	'4',
+	'5'.
+	'6',
+	'7'.
+	'8',
+	'9'.
+	'10',
+        ]
+	await ctx.send(f'Выпало число {random.choice(rollvar)}')
 	
 # RUN
 client.run(os.environ['DISCORD_TOKEN'])
