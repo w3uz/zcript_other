@@ -88,7 +88,7 @@ async def _info(ctx):
 	embed.add_field(name="*ban (упомянание)", value="блокирует пользователя ( нужны права на блокировку пользователей )", inline=True)
 	embed.add_field(name="*kick (упомянание)", value="выгоняет пользователя нужны права на исключение пользователей )", inline=True)
 	embed.add_field(name="*ping", value="Показывает ping бота ( что-то типо скорости соединения )", inline=True)
-	embed.add_field(name="*roll (число)", value="Выбирает число от 0 до выбранного вами", inline=True)
+	embed.add_field(name="*roll (1 число) (2 число)", value="Выбирает число от первого выбранного вами числа до второго выбранного вами числа", inline=True)
 	embed.add_field(name="*8ball (вопрос)", value="Помогает решить выбранный вопрос", inline=True)
 	embed.add_field(name="*to_nether (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в адские ( Minecraft )", inline=True)
 	embed.add_field(name="*to_over (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в обычный мир ( Minecraft )", inline=True)
