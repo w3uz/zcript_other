@@ -103,18 +103,11 @@ async def dollar(ctx):
 	course = course['Valute']['USD']['Value'] 
 	await ctx.send("Курс доллара: {} рублей".format(course))
 	
-@client.command(pass_context=True, aliases=['clear'])
+@client.command()
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
-	embed = discord.Embed(
-		colour = discord.Colour.red()
-	)
-    embed=discord.Embed()
-    embed.set_thumbnail(url="https://media.discordapp.net/attachments/721319431317356609/721770633456910347/image_5.png")
-    embed.add_field(name="Удаление сообщений", value="{amount} сообщений было удалено", inline=True)
-    embed.set_footer(text="zcript dev_")
-    await self.client.say(embed=embed)
+    await ctx.send(f'{amount} Сообщений было удалено')
 
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
