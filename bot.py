@@ -69,12 +69,6 @@ async def unban(ctx, *, member):
             await ctx.send(f'Unbanned {user.mention}')
             return
 
-@client.command()
-@commands.has_permissions(administrator = True)
-async def clear(ctx, amount=None):
-    await ctx.channel.purge(limit=int(amount))
-    await ctx.send(f'{amount} Сообщений было удалено')
-
 @client.command(aliases=['roll'])
 async def _roll(ctx, number:int):
 	num = random.randint(0,random.randint(0,number))
@@ -108,6 +102,19 @@ async def dollar(ctx):
 	course = r.json()
 	course = course['Valute']['USD']['Value'] 
 	await ctx.send("Курс доллара: {} рублей".format(course))
+	
+@client.command(pass_context=True, aliases=['clear'])
+@commands.has_permissions(administrator = True)
+async def clear(ctx, amount=None):
+    await ctx.channel.purge(limit=int(amount))
+	embed = discord.Embed (
+		colour = discord.Colour.red()
+	)
+	embed=discord.Embed()
+    embed.set_thumbnail(url="https://media.discordapp.net/attachments/721319431317356609/721770633456910347/image_5.png")
+    embed.add_field(name="Удаление сообщений", value="{amount} сообщений было удалено", inline=True)
+    embed.set_footer(text="zcript dev_")
+    await self.client.say(embed=embed)
 
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
