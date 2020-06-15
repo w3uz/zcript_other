@@ -107,10 +107,10 @@ async def dollar(ctx):
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
-	embed = discord.Embed (
+	embed = discord.Embed(
 		colour = discord.Colour.red()
 	)
-	embed=discord.Embed()
+    embed=discord.Embed()
     embed.set_thumbnail(url="https://media.discordapp.net/attachments/721319431317356609/721770633456910347/image_5.png")
     embed.add_field(name="Удаление сообщений", value="{amount} сообщений было удалено", inline=True)
     embed.set_footer(text="zcript dev_")
