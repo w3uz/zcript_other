@@ -70,8 +70,8 @@ async def unban(ctx, *, member):
             return
 
 @client.command(aliases=['roll'])
-async def _roll(ctx, number:int):
-	num = random.randint(0,random.randint(0,number))
+async def _roll(ctx, number:int, number2:int):
+	num = random.randint(0,random.randint(number, number2))
 	await ctx.send(f'Вам выпало: {num}')
 	
 @client.command(pass_context=True, aliases=['info'])
