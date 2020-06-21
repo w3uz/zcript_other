@@ -81,7 +81,7 @@ async def _info(ctx):
 	embed = discord.Embed (
 		colour = discord.Colour.red()
 	)
-	embed=discord.Embed(title="Краткая информация", url="https://vk.com/lifestyle_nw", description="Бот, сделанный вместе с NinW1n")
+	embed=discord.Embed(title="Краткая информация", url="https://discord.gg/AKd63AS", description="Бот сделанный почти полностью в одиночку")
 	embed.set_author(name="zcript info", url="https://vk.com/weu_z", icon_url="https://sun9-51.userapi.com/c856032/v856032447/221860/cyThQyAZFdU.jpg")
 	embed.set_thumbnail(url="https://media.discordapp.net/attachments/721319431317356609/721770633456910347/image_5.png")
 	embed.add_field(name="*clear (число)", value="очищает выбранное кол-во сообщений ( нужны права администратора )", inline=True)
