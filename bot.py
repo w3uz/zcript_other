@@ -131,6 +131,14 @@ async def кейс(ctx):
 	'Личный цвет'
         ]
 	await ctx.send(f'Вам выпало: {random.choice(responses)}. За личной ролью или личным цветом обращаться к овнеру либо администраторам')
+	
+@client.error
+async def client_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        msg = 'This command is ratelimited, please try again in {:.2f}s'.format(error.retry_after)
+        await ctx.send(msg)
+    else:
+        raise error
 
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
