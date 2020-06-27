@@ -107,7 +107,23 @@ async def dollar(ctx):
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
-    await ctx.send(f'{amount} Сообщений было удалено')
+    await ctx.send(f'{amount} Сообщений было успешно удалено')
+
+@client.command()
+@commands.cooldown(1, 7200, commands.BucketType.user)
+async def кейс(ctx):
+	responses = [
+	'Ничего',
+	'Ничего',
+	'Ничего',
+	'Ничего',
+	'Ничего',
+	'Ничего',	
+	'Ничего',
+	'Личная роль',
+	'Личный цвет'.
+        ]
+	await ctx.send(f'Вам выпало: {random.choice(responses)}')
 
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
