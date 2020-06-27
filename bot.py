@@ -111,7 +111,7 @@ async def clear(ctx, amount=None):
 
 @client.command()
 @commands.cooldown(1, 86400, commands.BucketType.user)
-async def кейс(ctx):
+async def case(ctx):
 	responses = [
 	'Ничего',
 	'Ничего',
@@ -132,8 +132,8 @@ async def кейс(ctx):
         ]
 	await ctx.send(f'Вам выпало: {random.choice(responses)}. За личной ролью или личным цветом обращаться к овнеру либо администраторам')
 
-@info.error
-async def кейс_error(ctx, error):
+@case.error
+async def case_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         msg = 'This command is ratelimited, please try again in {:.2f}s'.format(error.retry_after)
         await ctx.send(msg)
