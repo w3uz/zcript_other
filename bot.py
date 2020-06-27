@@ -130,12 +130,12 @@ async def case(ctx):
 	'Личная роль',
 	'Личный цвет'
         ]
-	await ctx.send(f'Вам выпало: {random.choice(responses)}. За личной ролью или личным цветом обращаться к овнеру либо администраторам')
+	await ctx.send(f'Вам выпало: {random.choice(responses)}. \nЗа личной ролью или личным цветом обращаться к овнеру вместе с пруфами')
 
 @case.error
 async def case_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
-        msg = 'This command is ratelimited, please try again in {:.2f}s'.format(error.retry_after)
+        msg = 'У вас задержка на эту команду. Повторите через {:.2f}*60 минут'.format(error.retry_after)
         await ctx.send(msg)
     else:
         raise error
