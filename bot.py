@@ -121,7 +121,7 @@ async def кейс(ctx):
 	'Ничего',	
 	'Ничего',
 	'Личная роль',
-	'Личный цвет'.
+	'Личный цвет'
         ]
 	await ctx.send(f'Вам выпало: {random.choice(responses)}')
 
