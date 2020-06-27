@@ -127,15 +127,15 @@ async def case(ctx):
 	'Ничего',
 	'Ничего',	
 	'Ничего',
-	'Личная роль',
-	'Личный цвет'
+	'Личная роль \nЗа получением этого, напишите в лс овнеру с пруфами',
+	'Личный цвет \nЗа получением этого, напишите в лс овнеру с пруфами'
         ]
-	await ctx.send(f'Вам выпало: {random.choice(responses)}. \nЗа личной ролью или личным цветом обращаться к овнеру вместе с пруфами')
+	await ctx.send(f'Вам выпало: {random.choice(responses)}.')
 
 @case.error
 async def case_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
-        msg = 'У вас задержка на эту команду. Повторите через {:.2f}*60 минут'.format(error.retry_after)
+        msg = 'У вас задержка на эту команду. Повторите через {:.2f*60} минут'.format(error.retry_after)
         await ctx.send(msg)
     else:
         raise error
