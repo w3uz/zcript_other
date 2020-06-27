@@ -110,9 +110,16 @@ async def clear(ctx, amount=None):
     await ctx.send(f'{amount} Сообщений было успешно удалено')
 
 @client.command()
-@commands.cooldown(1, 7200, commands.BucketType.user)
+@commands.cooldown(1, 86400, commands.BucketType.user)
 async def кейс(ctx):
 	responses = [
+	'Ничего',
+	'Ничего',
+	'Ничего',
+	'Ничего',
+	'Ничего',
+	'Ничего',	
+	'Ничего',
 	'Ничего',
 	'Ничего',
 	'Ничего',
@@ -123,7 +130,7 @@ async def кейс(ctx):
 	'Личная роль',
 	'Личный цвет'
         ]
-	await ctx.send(f'Вам выпало: {random.choice(responses)}')
+	await ctx.send(f'Вам выпало: {random.choice(responses)}. За личной ролью или личным цветом обращаться к овнеру либо администраторам')
 
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
