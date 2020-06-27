@@ -93,6 +93,7 @@ async def _info(ctx):
 	embed.add_field(name="*to_nether (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в адские ( Minecraft )", inline=True)
 	embed.add_field(name="*to_over (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в обычный мир ( Minecraft )", inline=True)
 	embed.add_field(name="*dollar", value="Показывает актуальный курс доллара", inline=True)
+	embed.add_field(name="*case", value="Самые обычные кейсы, может выпасть: Ничего, Личная роль, Личный цвет. Кулдаун 24ч", inline=True)
 	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj")
 	await author.send(embed=embed)
 	
