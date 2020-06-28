@@ -12,16 +12,19 @@ class MyClient(discord.Client):
 client = commands.Bot(command_prefix= '*')
 Clientdiscord = discord.Client()
 
+#кик
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, member: discord.Member, *, reason=None):
     await member.kick(reason=reason)
-    await ctx.send(f'User {member} has been kicked.')
+    await ctx.send(f'User {member} Был кикнут.')
 	
+#команда ping
 @client.command()
 async def ping(ctx):
 	await ctx.send(f'Pong! {round(client.latency * 1000)} ms')
 	
+#8балл
 @client.command(aliases=['8ball', 'test'])
 async def _8ball(ctx, *, question):
 	responses = [
@@ -48,13 +51,13 @@ async def _8ball(ctx, *, question):
         ]
 	await ctx.send(f'Вопрос: {question}\nОтвет: {random.choice(responses)}')
 	
-#The below code bans player.
+#Команда на бан
 @client.command()
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, member : discord.Member, *, reason = None):
     await member.ban(reason = reason)
 
-#The below code unbans player.
+#Разбан
 @client.command()
 @commands.has_permissions(administrator = True)
 async def unban(ctx, *, member):
@@ -69,11 +72,13 @@ async def unban(ctx, *, member):
             await ctx.send(f'Unbanned {user.mention}')
             return
 
+#рандом
 @client.command(aliases=['roll'])
 async def _roll(ctx, number:int, number2:int):
 	num = random.randint(number,random.randint(number, number2))
 	await ctx.send(f'Вам выпало: {num}')
 	
+#команда info
 @client.command(pass_context=True, aliases=['info'])
 async def _info(ctx):
 	author = ctx.message.author
@@ -97,6 +102,7 @@ async def _info(ctx):
 	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj")
 	await author.send(embed=embed)
 	
+#курс доллара
 @client.command()
 async def dollar(ctx):
 	r = requests.get("https://www.cbr-xml-daily.ru/daily_json.js")
@@ -104,12 +110,14 @@ async def dollar(ctx):
 	course = course['Valute']['USD']['Value'] 
 	await ctx.send("Курс доллара: {} рублей".format(course))
 	
+#очистка чата
 @client.command()
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
     await ctx.send(f'{amount} Сообщений было успешно удалено')
 
+#кейсы
 @client.command()
 @commands.cooldown(1, 86400, commands.BucketType.user)
 async def case(ctx):
