@@ -72,11 +72,10 @@ async def unban(ctx, *, member):
             await ctx.send(f'Unbanned {user.mention}')
             return
 
-#рандом
 @client.command(aliases=['roll'])
 async def _roll(ctx, number:int):
-	num = random.randint(number,random.randint(0, number))
-	await ctx.send(f'Вам выпало: {num}')
+	num = random.randint(0,random.randint(0, number))
+	await ctx.send(f'Вам выпало число: {num}')
 	
 #команда info
 @client.command(pass_context=True, aliases=['info'])
