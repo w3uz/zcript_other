@@ -191,7 +191,7 @@ async def unkhown_error(ctx):
 @client.command()
 async def error_umaru(ctx):
 	author = ctx.message.author
-	msg = 'Молодец, ты разгадал unkhown 0x000000078'
+	msg = 'Молодец, ты разгадал unkhown 0x000000078 https://media.kg-portal.ru/anime/h/himoutoumaruchan2/images/himoutoumaruchan2_220.jpg'
 	await author.send(msg)
 	
 	# RUN
