@@ -11,6 +11,7 @@ class MyClient(discord.Client):
         
 client = commands.Bot(command_prefix= '*')
 Clientdiscord = discord.Client()
+client.remove_command('help')
 
 #кик
 @client.command()
