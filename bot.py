@@ -182,5 +182,11 @@ async def umarusecret(ctx):
 	msg = 'Молодец, ты нашел пасхалку, напиши в лс овнеру с пруфами, чтобы получить секретную роль https://media.kg-portal.ru/anime/h/himoutoumaruchan2/trailers/30416t.jpg'
 	await author.send(msg)
 	
+@client.command()
+async def unkhown_error(ctx):
+	author = ctx.message.author
+	msg = 'https://cdn.discordapp.com/attachments/704013608253653012/727558339659169863/Screenshot_2.png'
+	await author.send(msg)
+	
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
