@@ -211,6 +211,7 @@ async def rules(ctx):
 	embed.add_field(name="[8][Любой вид обмана карается.]", value="", inline=False)
 	embed.add_field(name="[9][Запрещена продажа]", value="", inline=False)
 	embed.add_field(name="[10][Не стоит злоупотреблять выделением]", value="", inline=False)
+	
 	await ctx.send(embed=embed)
 	
 	# RUN
