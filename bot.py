@@ -94,8 +94,6 @@ async def _info(ctx):
 	embed.add_field(name="*ping", value="Показывает ping бота ( что-то типо скорости соединения )", inline=True)
 	embed.add_field(name="*roll (1 число) (2 число)", value="Выбирает число от первого выбранного вами числа до второго выбранного вами числа", inline=True)
 	embed.add_field(name="*8ball (вопрос)", value="Помогает решить выбранный вопрос", inline=True)
-	embed.add_field(name="*to_nether (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в адские ( Minecraft )", inline=True)
-	embed.add_field(name="*to_over (1-ая координата) (2-ая координата)", value="Переводит ваши координаты в обычный мир ( Minecraft )", inline=True)
 	embed.add_field(name="*dollar", value="Показывает актуальный курс доллара", inline=True)
 	embed.add_field(name="*case", value="Самые обычные кейсы, может выпасть: Ничего, Личная роль, Личный цвет. Кулдаун 24ч", inline=True)
 	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj")
@@ -162,7 +160,7 @@ async def case(ctx):
 @case.error
 async def case_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
-        msg = 'У вас задержка на эту команду. Повторите через {:.2f} секунд'.format(error.retry_after)
+        msg = 'У вас задержка на эту команду. Повторите через {:.2f}/60 минут'.format(error.retry_after)
         await ctx.send(msg)
     else:
         raise error
