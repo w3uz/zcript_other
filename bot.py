@@ -194,5 +194,9 @@ async def error_umaru(ctx):
 	msg = 'Молодец, ты разгадал unkhown 0x000000078 https://media.kg-portal.ru/anime/h/himoutoumaruchan2/images/himoutoumaruchan2_220.jpg'
 	await author.send(msg)
 	
+@client.command()
+async def unkh0wn(ctx):
+	await ctx.send(f'https://i.ytimg.com/vi/cqZ9ym-5Rzg/maxresdefault.jpg')
+	
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
