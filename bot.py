@@ -152,7 +152,7 @@ async def case(ctx):
 	'Личная роль на +- 7 дней\nЗа получением этого, напишите в лс овнеру с пруфами',
 	'Личный цвет навсегда\nЗа получением этого, напишите в лс овнеру с пруфами'
         ]
-	await ctx.send(f'Вам выпало: {random.choice(responses)}.')
+	await ctx.send(f'```Вам выпало: {random.choice(responses)}.```')
 
 @case.error
 async def case_error(ctx, error):
