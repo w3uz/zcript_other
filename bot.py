@@ -160,7 +160,7 @@ async def case(ctx):
 @case.error
 async def case_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
-        await ctx.send(f'У вас задержка на эту команду. Повторите через {:.2f /60} секунд'.format(error.retry_after)')
+        await ctx.send(f'У вас задержка на эту команду. Повторите через {:.2f}/60 секунд'.format(error.retry_after)')
     else:
         raise error
 
