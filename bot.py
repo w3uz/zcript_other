@@ -189,7 +189,7 @@ async def unkhown_error(ctx):
 	await author.send(msg)
 	
 @client.command()
-asynce def error_umaru(ctx):
+async def error_umaru(ctx):
 	author = ctx.message.author
 	msg = 'Молодец, ты разгадал unkhown 0x000000078'
 	await author.send(msg)
