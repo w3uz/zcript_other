@@ -193,26 +193,6 @@ async def error_umaru(ctx):
 async def unkh0wn(ctx):
 	await ctx.send(f'https://i.ytimg.com/vi/cqZ9ym-5Rzg/maxresdefault.jpg')
 	
-@client.command()
-async def rules(ctx):
-	embed = discord.Embed (
-		colour = discord.Colour.red()
-	)
-	embed=discord.Embed(title="Правила", description="Правила сервера ( может обновляться в любое время )")
-	embed.set_author(name="zcript rules", url="https://vk.com/weu_z",, icon_url="https://sun9-51.userapi.com/c856032/v856032447/221860/cyThQyAZFdU.jpg")
-	embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/721319431317356609/721770633456910347/image_5.png")
-	embed.add_field(name="[1][Спам и капс запрещены.]", value="", inline=False)
-	embed.add_field(name="[2][В голосовом чате быть адекватным.]", value="", inline=False)
-	embed.add_field(name="[3][Запрещены материалы 18+.]", value="", inline=False)
-	embed.add_field(name="[4][Реклама запрещена.]", value="", inline=False)
-	embed.add_field(name="[5][Если есть вопрос, обращайтесь к Модераторам.]", value="", inline=False)
-	embed.add_field(name="[6][Попрошайничество запрещено.]", value="", inline=False)
-	embed.add_field(name="[7][Запрещён оффтоп.]", value="", inline=False)
-	embed.add_field(name="[8][Любой вид обмана карается.]", value="", inline=False)
-	embed.add_field(name="[9][Запрещена продажа]", value="", inline=False)
-	embed.add_field(name="[10][Не стоит злоупотреблять выделением]", value="", inline=False)
-	
-	await ctx.send(embed=embed)
 	
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
