@@ -96,6 +96,7 @@ async def _info(ctx):
 	embed.add_field(name="*8ball (вопрос)", value="Помогает решить выбранный вопрос", inline=True)
 	embed.add_field(name="*dollar", value="Показывает актуальный курс доллара", inline=True)
 	embed.add_field(name="*case", value="Самые обычные кейсы, может выпасть: Ничего, Личная роль, Личный цвет. Кулдаун 24ч", inline=True)
+	embed.add_field(name="*unkhown", value="???", inline=True)
 	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj Secret cmd: *umaru")
 	await author.send(embed=embed)
 	
@@ -169,5 +170,16 @@ async def case_error(ctx, error):
 async def umaru(ctx):
 	await ctx.send(f'Ты нашел пасхалку, поздравляю! https://media.kg-portal.ru/anime/h/himoutoumaruchan2/images/himoutoumaruchan2_220.jpg')
 
+
+@client.command()
+async def unkhown(ctx):
+	await ctx.send(f'011010000111010001110100011100000111001100111010001011110010111101110000011000010111001101110100011001010110001001101001011011100010111001100011011011110110110100101111011100100110000101110111001011110110101101101000011001100011100001010111011101100100101001011000')
+	
+@client.command()
+async def umarusecret(ctx):
+	author = ctx.message.author
+	msg = 'Молодец, ты нашел пасхалку, напиши в лс овнеру с пруфами, чтобы получить секретную роль https://media.kg-portal.ru/anime/h/himoutoumaruchan2/trailers/30416t.jpg'
+	await author.send(msg)
+	
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
