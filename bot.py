@@ -98,7 +98,7 @@ async def _info(ctx):
 	embed.add_field(name="*dollar", value="Показывает актуальный курс доллара", inline=True)
 	embed.add_field(name="*case", value="Самые обычные кейсы, может выпасть: Ничего, Личная роль, Личный цвет. Кулдаун 24ч", inline=True)
 	embed.add_field(name="*unkhown", value="???", inline=True)
-	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj Secret cmd: *umaru")
+	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj")
 	await author.send(embed=embed)
 	
 #курс доллара
@@ -114,18 +114,13 @@ async def dollar(ctx):
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
-    await ctx.send(f'{amount} Сообщений было удалено')
+    await ctx.send(f' ```{amount} Сообщений было удалено``` ')
 
 #кейсы
 @client.command()
 @commands.cooldown(1, 43200, commands.BucketType.user)
 async def case(ctx):
 	responses = [
-	'Ничего',
-	'Ничего',
-	'Ничего',
-	'Ничего',
-	'Ничего',
 	'Ничего',	
 	'Ничего',
 	'Ничего',
