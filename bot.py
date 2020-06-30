@@ -165,5 +165,9 @@ async def case_error(ctx, error):
     else:
         raise error
 
+@client.command()
+async def umaru(ctx):
+	await ctx.send(f'Ты нашел пасхалку, поздравляю! https://media.kg-portal.ru/anime/h/himoutoumaruchan2/images/himoutoumaruchan2_220.jpg')
+
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
