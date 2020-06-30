@@ -112,7 +112,7 @@ async def dollar(ctx):
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
-    await ctx.send(f'{amount} Сообщений было успешно удалено')
+    await ctx.send(f'{amount} Сообщений было удалено')
 
 #кейсы
 @client.command()
