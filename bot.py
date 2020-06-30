@@ -118,7 +118,7 @@ async def clear(ctx, amount=None):
 
 #кейсы
 @client.command()
-@commands.cooldown(1, 86400, commands.BucketType.user)
+@commands.cooldown(1, 43200, commands.BucketType.user)
 async def case(ctx):
 	responses = [
 	'Ничего',
@@ -154,8 +154,8 @@ async def case(ctx):
 	'Ничего',
 	'Ничего',
 	'Ничего',
-	'Личная роль \nЗа получением этого, напишите в лс овнеру с пруфами',
-	'Личный цвет \nЗа получением этого, напишите в лс овнеру с пруфами'
+	'Личная роль на +- 7 дней\nЗа получением этого, напишите в лс овнеру с пруфами',
+	'Личный цвет навсегда\nЗа получением этого, напишите в лс овнеру с пруфами'
         ]
 	await ctx.send(f'Вам выпало: {random.choice(responses)}.')
 
