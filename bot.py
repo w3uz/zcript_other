@@ -188,5 +188,11 @@ async def unkhown_error(ctx):
 	msg = 'https://cdn.discordapp.com/attachments/704013608253653012/727558339659169863/Screenshot_2.png'
 	await author.send(msg)
 	
+@client.command()
+asynce def error_umaru(ctx):
+	author = ctx.message.author
+	msg ='Молодец, ты разгадал unkhown 0x000000078'
+	await author.send(msg)
+	
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
