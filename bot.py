@@ -106,7 +106,8 @@ async def dollar(ctx):
 	course = r.json()
 	course = course['Valute']['USD']['Value'] 
 	await ctx.send("Курс доллара: {} рублей".format(course))
-	
+
+@client.command()
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
