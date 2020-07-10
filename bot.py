@@ -20,13 +20,12 @@ async def kick(ctx, member: discord.Member, *, reason=None):
     await member.kick(reason=reason)
     await ctx.send(f'User {member} Был кикнут.')
 	
-#команда ping
 @client.command()
 async def ping(ctx):
-	await ctx.send(f'Pong! {round(client.latency * 1000)} ms')
+	await ctx.send(embed=discord.Embed(title='Пинг бота', description= f'Pong! Пинг бота - {round(client.latency * 1000)} ms'))
 	
 #8балл
-@client.command(aliases=['8ball', 'test'])
+@client.command(aliases=['8ball'])
 async def _8ball(ctx, *, question):
 	responses = [
 	'Это точно.',
@@ -50,7 +49,7 @@ async def _8ball(ctx, *, question):
 	'Перспектива не очень хорошая.',
 	'Очень сомнительно.'     
         ]
-	await ctx.send(f'Вопрос: {question}\nОтвет: {random.choice(responses)}')
+	await ctx.send(embed=discord.Embed(title='Помогу решить за тебя', description= f'Вопрос: {question} \n Ответ: {random.choice(responses)}'))
 	
 #Команда на бан
 @client.command()
@@ -75,8 +74,8 @@ async def unban(ctx, *, member):
 
 @client.command(aliases=['roll'])
 async def _roll(ctx, number:int):
-	num = random.randint(0,random.randint(0, number))
-	await ctx.send(f'Вам выпало число: {num}')
+    num = random.randint(0,random.randint(0, number))
+    await ctx.send(embed=discord.Embed(title='Рандом', description= f'Вам выпало число {num}'))
 	
 #команда info
 @client.command(pass_context=True, aliases=['info'])
@@ -108,12 +107,10 @@ async def dollar(ctx):
 	course = course['Valute']['USD']['Value'] 
 	await ctx.send("Курс доллара: {} рублей".format(course))
 	
-#очистка чата
-@client.command()
 @commands.has_permissions(administrator = True)
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
-    await ctx.send(f' ```{amount} Сообщений было удалено``` ')
+    await ctx.send(embed=discord.Embed(title='Удаление сообщений', description= f'Было очищенно {amount} сообщений')))
 
 #кейсы
 #@client.command()
@@ -160,6 +157,10 @@ async def clear(ctx, amount=None):
 #        await ctx.send(msg)
 #    else:
 #        raise error
+
+@client.command(aliases=['5opka'])
+async def _5opka(ctx):
+    await ctx.send(f'https://cdn.discordapp.com/attachments/556081968467542039/731073414839795742/video0.mp4')
 
 	
 	# RUN
