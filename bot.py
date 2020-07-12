@@ -123,51 +123,6 @@ async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
     await ctx.send(embed=discord.Embed(title='Удаление сообщений', description= f'Было очищенно {amount} сообщений'))
 
-#кейсы
-#@client.command()
-#@commands.cooldown(1, 86400, commands.BucketType.user)
-#async def case(ctx):
-#	responses = [
-#	'Ничего',	
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',	
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',	
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',	
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Ничего',
-#	'Личная роль на +- 7 дней\nЗа получением этого, напишите в лс овнеру с пруфами',
-#	'Личный цвет навсегда\nЗа получением этого, напишите в лс овнеру с пруфами'
-#         ]
-#	await ctx.send(f'```Вам выпало: {random.choice(responses)}.```')
-#
-#@case.error
-#async def case_error(ctx, error):
-#    if isinstance(error, commands.CommandOnCooldown):
-#        msg = 'У вас задержка на эту команду. Повторите через {:.2f} секунд'.format(error.retry_after)
-#        await ctx.send(msg)
-#    else:
-#        raise error
 
 @client.command(aliases=['5opka'])
 async def _5opka(ctx):
