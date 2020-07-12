@@ -95,7 +95,7 @@ async def _info(ctx):
 	embed.add_field(name="roll (число)", value="Выбирает число от 0 до выбранного вами числа", inline=True)
 	embed.add_field(name="8ball (вопрос)", value="Помогает решить выбранный вопрос", inline=True)
 	embed.add_field(name="dollar", value="Показывает актуальный курс доллара", inline=True)
-	embed.add_field(name="case", value="Самые обычные кейсы, может выпасть: Ничего, Личная роль, Личный цвет. Кулдаун 24ч", inline=True)
+	embed.add_field(name="case", value="Самые обычные кейсы, может выпасть: Ничего, Личная роль, Личный цвет.", inline=True)
 	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj")
 	await author.send(embed=embed)
 	
