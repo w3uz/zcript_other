@@ -13,6 +13,18 @@ client = commands.Bot(command_prefix= 'z!')
 Clientdiscord = discord.Client()
 client.remove_command('help')
 
+
+@client.event
+async def on_message(message):
+	member = message.author
+	role = discord.utils.get(message.guild.roles, id=725720667948843110)
+	rolled = random.randint(1, 50)
+	if rolled == 50:  
+		await member.add_roles(role)
+		await member.send(embed = discord.Embed(title = 'Рандом', description = f'Поздравляю, {member}, ты выбил кейс!'))
+		print(f'{member} получил кейс!')
+		
+
 #кик
 @client.command()
 @commands.has_permissions(kick_members=True)
@@ -118,16 +130,5 @@ async def clear(ctx, amount=None):
 async def _5opka(ctx):
     await ctx.send(f'https://cdn.discordapp.com/attachments/556081968467542039/731073414839795742/video0.mp4')
 
-@client.event
-async def on_message(message):
-	member = message.author
-	role = discord.utils.get(message.guild.roles, id=725720667948843110)
-	rolled = random.randint(1, 50)
-	if rolled == 50:  
-		await member.add_roles(role)
-		await member.send(embed = discord.Embed(title = 'Рандом', description = f'Поздравляю, {member}, ты выбил кейс!'))
-		print(f'{member} получил кейс!')
-
-	
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
