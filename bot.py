@@ -16,7 +16,7 @@ client.remove_command('help')
 @client.event
 async def on_message(message):
 	member = message.author
-	role = discord.utils.get(message.guild.roles, name = "Кейс")
+	role = discord.utils.get(message.guild.roles, id=725720667948843110)
 	rolled = random.randint(1, 50)
 	if rolled == 50:  
 		await member.add_roles(role)
