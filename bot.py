@@ -13,15 +13,6 @@ client = commands.Bot(command_prefix= 'z!')
 Clientdiscord = discord.Client()
 client.remove_command('help')
 
-@client.event
-async def on_message(message):
-	member = message.author
-	role = discord.utils.get(message.guild.roles, id=725720667948843110)
-	rolled = random.randint(1, 50)
-	if rolled == 50:  
-		await member.add_roles(role)
-		await member.send(embed = discord.Embed(title = 'Рандом', description = f'Поздравляю, {member}, ты выбил кейс!'))
-
 #кик
 @client.command()
 @commands.has_permissions(kick_members=True)
