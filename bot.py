@@ -17,6 +17,9 @@ client.remove_command('help')
 async def on_command_error(ctx, error):
 	if isinstance(error, commands.MissingRequiredArgument):
 		await ctx.send(embed=discord.Embed(title = 'Ошибка!', description = 'Отсутсвуют необходимые аргументы!'))
+	if isinstance(error, commands.CommandNotFound):
+		await ctx.send(embed=discord.Embed(title = 'Ошибка!', description = 'Такой команды не существует или она введена неправильно!'))
+
 
 
 #кик
