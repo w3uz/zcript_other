@@ -107,7 +107,7 @@ async def dollar(ctx):
 	course = course['Valute']['USD']['Value'] 
 	await ctx.send("Курс доллара: {} рублей".format(course))
 	
-CHANNEL_ID = 733979475733118996
+CHANNEL_ID = 705391572606386176
 
 @client.command()
 async def suggest(ctx, *, command):
