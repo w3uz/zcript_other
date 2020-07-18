@@ -13,6 +13,12 @@ client = commands.Bot(command_prefix= 'z!')
 Clientdiscord = discord.Client()
 client.remove_command('help')
 
+@client.event
+async def on_command_error(ctx, error):
+	if isinstance(error, commands.MissingRequiredArgument):
+		await ctx.send(embed=discord.Embed(title = 'Ошибка!', description = 'Отсутсвуют необходимые аргументы!'))
+
+
 #кик
 @client.command()
 @commands.has_permissions(kick_members=True)
@@ -120,9 +126,10 @@ async def suggest(ctx, *, command):
 
 @client.command()
 @commands.has_permissions(administrator = True)
-async def clear(ctx, amount=None):
-    await ctx.channel.purge(limit=int(amount))
+async def clear(ctx, amount : int):
+    await ctx.channel.purge(limit-amount)
     await ctx.send(embed=discord.Embed(title='Удаление сообщений', description= f'Было очищенно {amount} сообщений'))
+
 
 
 @client.command(aliases=['5opka'])
