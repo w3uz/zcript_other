@@ -95,7 +95,7 @@ async def _info(ctx):
 	embed.add_field(name="roll (число)", value="Выбирает число от 0 до выбранного вами числа", inline=True)
 	embed.add_field(name="8ball (вопрос)", value="Помогает решить выбранный вопрос", inline=True)
 	embed.add_field(name="dollar", value="Показывает актуальный курс доллара", inline=True)
-	embed.add_field(name="case", value="Самые обычные кейсы, может выпасть: Ничего, Личная роль, Личный цвет.", inline=True)
+	embed.add_field(name="suggest", value="Предложить идею. Работает только на официальном дискорд сервере бота", inline=True)
 	embed.set_footer(text="zcript devs: discord.gg/pC8wTaj")
 	await author.send(embed=embed)
 	
@@ -106,6 +106,17 @@ async def dollar(ctx):
 	course = r.json()
 	course = course['Valute']['USD']['Value'] 
 	await ctx.send("Курс доллара: {} рублей".format(course))
+	
+CHANNEL_ID = 733979475733118996
+
+@client.command()
+async def suggest(ctx, *, command):
+    ': Suggest a command. Provide the command name and description'
+    embed = discord.Embed(title='Предложения', description=f'Идея от: {ctx.author.mention}\nПредложение: *{command}*', color=discord.Color.green())
+    channel = ctx.guild.get_channel(CHANNEL_ID)
+    msg = await channel.send(embed=embed)
+    await msg.add_reaction('👍')
+    await msg.add_reaction('👎')
 
 @client.command()
 @commands.has_permissions(administrator = True)
