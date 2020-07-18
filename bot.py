@@ -129,7 +129,7 @@ async def suggest(ctx, *, command):
 
 @client.command()
 @commands.has_permissions(administrator = True)
-async def clear(ctx, amount : int):
+async def clear(ctx, amount:int):
     await ctx.channel.purge(limit-amount)
     await ctx.send(embed=discord.Embed(title='Удаление сообщений', description= f'Было очищенно {amount} сообщений'))
 
