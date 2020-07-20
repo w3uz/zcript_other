@@ -9,7 +9,7 @@ class MyClient(discord.Client):
 	async def on_ready(self):
 		print('Logged on as {0}!'.format(self.user))
         
-client = commands.Bot(command_prefix= 'z!')
+client = commands.Bot(command_prefix= '/')
 Clientdiscord = discord.Client()
 client.remove_command('help')
 
