@@ -136,9 +136,5 @@ async def clear(ctx, amount : int):
 
 
 
-@client.command(aliases=['5opka'])
-async def _5opka(ctx):
-    await ctx.send(f'https://cdn.discordapp.com/attachments/556081968467542039/731073414839795742/video0.mp4')
-
 	# RUN
 client.run(os.environ['DISCORD_TOKEN'])
